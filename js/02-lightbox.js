@@ -6,7 +6,6 @@ const ref = {
 };
 
 ref.gallery.insertAdjacentHTML("beforeend", createGalleryItems(galleryItems));
-ref.gallery.addEventListener("click", getBigImgUrl);
 
 function createGalleryItems(arrayGalleryItems) {
   return arrayGalleryItems
@@ -18,18 +17,8 @@ function createGalleryItems(arrayGalleryItems) {
     .join("");
 }
 
-function getBigImgUrl(event) {
-  event.preventDefault();
-
-  if (!event.target.classList.contains("gallery__image")) {
-    return;
-  }
-
-  //      модальне вікно з великою фоткою SimpleLightbox
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionDelay: 250,
-    //  fadeSpeed: 150,
-  });
-  //      модальне вікно з великою фоткою SimpleLightbox
-}
+//      модальне вікно з великою фоткою SimpleLightbox
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
